@@ -41,11 +41,12 @@
 			<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
 			<%= link_to 'Destroy', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'},:class => 'btn btn-danger' %>
 		<% end %>
-
+<% if current_user && current_user == @place.user %>
     <button class ="btn btn-primary" data-toggle= "modal" data-target= "#myModal">
       Upload a Picture
     </button>
-  
+
+ 
     <!-- Pictures modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalPicture" aria-hidden="true">
       <div class="modal-dialog">
@@ -67,10 +68,12 @@
           <% end %>
         </div>
       </div>
+    <% end %>
 
     </div>
 
     <!-- Button trigger modal -->
+    <% if current_user && current_user == @place.user %>
 
     <button class="btn btn-primary " data-toggle="modal" data-target="#commentModal">
       Add a comment
@@ -99,7 +102,7 @@
   </div>
 </div>
 </div>
-
+<% end %>
         
 </div>  
 
