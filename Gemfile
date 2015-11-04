@@ -43,6 +43,8 @@ gem 'figaro', ">= 1.0.0"
 
 gem 'carrierwave'
 
+gem "factory_girl_rails", "~> 4.0"
+
 gem "fog", "~> 1.3.1"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
